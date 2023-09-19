@@ -45,9 +45,8 @@ jobs:
       - name: Install LLVM on ubuntu
         if: matrix.os == 'ubuntu'
         run: |
-          wget https://apt.llvm.org/llvm.sh
-          chmod +x llvm.sh
-          sudo ./llvm.sh 16
+          sudo apt-get update
+          sudo apt-get install -y -q llvm-16-dev
       - name: 'Ubuntu debug'
         if:
           matrix.os == 'ubuntu'
